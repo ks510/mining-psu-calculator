@@ -9,7 +9,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
       <main>
-        <h1 className="text-3xl">Mining PSU Calculator</h1>
+        <h1 className="text-3xl font-extrabold">Mining PSU Calculator</h1>
       </main>
     </>
   );
