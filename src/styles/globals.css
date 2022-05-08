@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .title-shadow {
+    text-shadow: 0 0 35px rgba(255, 173, 79, 0.4);
+  }
+}
+
 html,
 body {
   padding: 0;
@@ -10,7 +16,9 @@ body {
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: black;
   color: #fff;
+  font-feature-settings: "salt";
 }
 
 a {

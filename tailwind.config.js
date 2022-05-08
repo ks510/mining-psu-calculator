@@ -4,7 +4,12 @@ module.exports = {
     './src/components/**/*.tsx'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'orange-light': '#EFBB36',
+        'orange-dark': '#E7750B'
+      }
+    },
     fontFamily: {
       'sans': ['Inter', 'sans-serif']
     }
