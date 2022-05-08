@@ -12,11 +12,10 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-image: url('../../public/stars-background.webp');
+  /*background-image: url('../../public/stars-background.webp');*/
+  background: linear-gradient(0deg, rgba(17, 16, 18, 0.7), rgba(17, 16, 18, 0.7)), url('../../public/stars-background.webp'), no-repeat;
   height: 100%;
-  background-repeat: no-repeat;
   background-size: cover;
-  background-color: black;
   color: #fff;
   font-feature-settings: "salt";
 }
