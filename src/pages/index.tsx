@@ -12,7 +12,7 @@ const Home: NextPage = () => {
         <h1
           className="text-5xl leading-tight font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-light to-orange-dark title-shadow tracking-[-0.01em]">Mining
           Rig Power Calculator</h1>
-
+        <div className="w-[892px] h-[271px] glass-box mt-14"></div>
       </main>
     </div>
   );
