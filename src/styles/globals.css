@@ -5,8 +5,12 @@
 @tailwind utilities;
 
 @layer components {
-  .title-shadow {
+  .title-glow-orange {
     text-shadow: 0 0 35px rgba(255, 173, 79, 0.4);
+  }
+
+  .title-glow-blue {
+    text-shadow: 0 0 41px rgba(49, 178, 232, 0.5);
   }
 
   .glass-box {
@@ -17,6 +21,18 @@
     backdrop-filter: blur(10px);
     /* Note: backdrop-filter has minimal browser support */
     border-radius: 30px;
+  }
+
+  .glass-box-blue-glow {
+    background: radial-gradient(46.91% 50% at 50% 120%, #31B2E8 0%, rgba(49, 178, 232, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    opacity: 0.3;
+    filter: blur(10px);
+  }
+
+  .glass-box-orange-glow {
+    background: radial-gradient(50% 50% at 50% -20%, rgba(238, 174, 46, 0.4) 0%, rgba(238, 174, 46, 0) 100%);
+    opacity: 0.3;
+    filter: blur(20px);
   }
 
 }

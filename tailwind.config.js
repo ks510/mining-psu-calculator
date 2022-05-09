@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       colors: {
         'orange-light': '#EFBB36',
-        'orange-dark': '#E7750B'
+        'orange-dark': '#E7750B',
+        'primary-blue': '#31B2E8'
       }
     },
     fontFamily: {
