@@ -13,6 +13,10 @@
     text-shadow: 0 0 41px rgba(49, 178, 232, 0.5);
   }
 
+  .small-glow-orange {
+    text-shadow: 0 0 10px rgba(255, 173, 79, 0.5);
+  }
+
   .glass-box {
     /* copied from figma, need to try making it in tailwind */
     background: linear-gradient(95.95deg, rgba(59, 54, 61, 0.3) 19.42%, rgba(61, 87, 98, 0) 102.64%);
