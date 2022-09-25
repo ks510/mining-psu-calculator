@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Calculator from '@components/calculator';
 
 const Home: NextPage = () => {
   return (
@@ -15,38 +16,7 @@ const Home: NextPage = () => {
 
         <div className="relative">
           <div className="w-[892px] h-[271px] glass-box mt-14">
-            <form className="absolute top-0 left-0 z-10 px-10 py-10">
-              <h1 className="text-2xl font-semibold text-primary-orange small-glow-orange">
-                Your GPUs
-              </h1>
-
-              <div className="flex flex-col">
-                <label htmlFor="gpu-model">GPU Model</label>
-                <input
-                  type="text"
-                  id="gpu-model"
-                  placeholder="Enter your GPU model"
-                  list="gpu-models"
-                />
-                <datalist id="gpu-models" className="">
-                  <option>RTX 3080 Ti</option>
-                  <option>RTX 3070</option>
-                  <option>RX 6600</option>
-                  <option>RX 6600</option>
-                  <option>RX 6600</option>
-                  <option>RX 6600</option>
-                  <option>RX 6600</option>
-                  <option>RX 6600</option>
-                  <option>RX 6600</option>
-                  <option>RX 6600</option>
-                  <option>RX 6600</option>
-                  <option>RX 6600</option>
-                  <option>RX 6600</option>
-                  <option>RX 6600</option>
-                  <option>RTX 500</option>
-                </datalist>
-              </div>
-            </form>
+            <Calculator />
 
             <div className="absolute top-0 left-0 h-full w-full glass-box-blue-glow z-2"></div>
             <div className="absolute top-0 left-0 h-full w-full glass-box-orange-glow z-2"></div>
