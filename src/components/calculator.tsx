@@ -14,7 +14,7 @@ const Calculator: FC = () => {
         Your GPUs
       </h1>
 
-      <Dropdown />
+      <Dropdown placeholder="Find your GPU model..." />
     </form>
   );
 };
