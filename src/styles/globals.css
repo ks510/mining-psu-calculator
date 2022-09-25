@@ -2,7 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://rsms.me/inter/inter.css');
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/public/fonts/Inter-Regular.woff2?v=3.19") format("woff2");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/public/fonts/Inter-Medium.woff2?v=3.19") format("woff2");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/public/fonts/Inter-SemiBold.woff2?v=3.19") format("woff2");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/public/fonts/Inter-Bold.woff2?v=3.19") format("woff2");
+}
 
 @layer components {
   .title-glow-orange {
@@ -60,3 +90,4 @@ a {
 * {
   box-sizing: border-box;
 }
+
