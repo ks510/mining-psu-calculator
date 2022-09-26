@@ -1,8 +1,16 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Calculator from '@components/calculator';
+import { gpus } from '../data';
+import { GPU } from '../types/GPU';
 
-const Home: NextPage = () => {
+interface Props {
+  gpus: GPU[];
+}
+
+const Home: NextPage<Props> = props => {
+  const { gpus } = props;
+
   return (
     <div className="h-screen">
       <Head>
@@ -16,7 +24,7 @@ const Home: NextPage = () => {
 
         <div className="relative">
           <div className="w-[892px] h-[271px] glass-box mt-14">
-            <Calculator />
+            <Calculator gpuList={gpus} />
 
             <div className="absolute top-0 left-0 h-full w-full glass-box-blue-glow z-2"></div>
             <div className="absolute top-0 left-0 h-full w-full glass-box-orange-glow z-2"></div>
@@ -60,5 +68,9 @@ const Home: NextPage = () => {
     </div>
   );
 };
-
+export const getStaticProps = async () => {
+  return {
+    props: { gpus: gpus }
+  };
+};
 export default Home;

@@ -87,6 +87,25 @@
     filter: blur(20px);
   }
 
+  .dropdown-scrollbar::-webkit-scrollbar {
+    background-color: transparent;
+    width: 4px;
+  }
+
+  .dropdown-scrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  .dropdown-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 16px;
+    border: 4px solid transparent;
+  }
+
+  .dropdown-scrollbar::-webkit-scrollbar-button {
+    display: none;
+  }
+
 }
 
 html,
