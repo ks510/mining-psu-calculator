@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Calculator from '@components/calculator';
+import Calculator from '@components/Calculator';
 import { gpus } from '../data';
 import { GPU } from '../types/GPU';
 

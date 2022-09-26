@@ -1,6 +1,8 @@
 import { FC } from 'react';
-import Dropdown from '@components/dropdown';
+import Dropdown from '@components/Dropdown';
 import { GPU } from '../types/GPU';
+import InfoIcon from '../Icons/InfoIcon';
+import QuantityInput from '@components/QuantityInput';
 
 interface Props {
   gpuList: GPU[];
@@ -15,7 +17,10 @@ const Calculator: FC<Props> = props => {
         Your GPUs
       </h1>
 
-      <Dropdown placeholder="Find your GPU model..." options={gpuList} />
+      <div className="flex gap-5">
+        <Dropdown placeholder="Find your GPU model..." options={gpuList} />
+        <QuantityInput />
+      </div>
     </form>
   );
 };
