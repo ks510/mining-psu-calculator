@@ -28,7 +28,7 @@ const QuantityInput: FC<Props> = props => {
         placeholder="1"
         value={quantity}
         onChange={handleChange}
-        className="glass-box-input px-4 py-2 w-16 text-center mt-4"
+        className="glass-box-input px-4 py-2 w-16 text-center mt-4 text-lg"
       />
     </div>
   );
