@@ -22,13 +22,10 @@ const Home: NextPage<Props> = props => {
           Mining Rig Power Calculator
         </h1>
 
-        <div className="relative">
-          <div className="w-[892px] h-[271px] glass-box mt-14">
-            <Calculator gpuList={gpus} />
-
-            <div className="absolute top-0 left-0 h-full w-full glass-box-blue-glow z-2"></div>
-            <div className="absolute top-0 left-0 h-full w-full glass-box-orange-glow z-2"></div>
-          </div>
+        <div className="relative w-[892px] glass-box mt-14">
+          <div className="absolute top-0 left-0 h-full w-full glass-box-blue-glow" />
+          <div className="absolute top-0 left-0 h-full w-full glass-box-orange-glow" />
+          <Calculator gpuList={gpus} />
         </div>
 
         <h1 className="text-5xl leading-tight font-bold text-primary-blue title-glow-blue tracking-[-0.01em] mt-14">

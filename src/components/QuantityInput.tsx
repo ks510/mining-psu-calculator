@@ -1,10 +1,16 @@
 import { ChangeEvent, ChangeEventHandler, FC, useState } from 'react';
 
-const QuantityInput: FC = () => {
-  const [quantity, setQuantity] = useState(1);
+interface Props {
+  index: number;
+  quantity: number;
+  updateQuantity: (index: number, quantity: number) => void;
+}
+
+const QuantityInput: FC<Props> = props => {
+  const { index, quantity, updateQuantity } = props;
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setQuantity(+event.target.value);
+    updateQuantity(index, +event.target.value);
   };
 
   return (
@@ -16,10 +22,8 @@ const QuantityInput: FC = () => {
       </label>
       <input
         type="number"
-        min="0"
-        max="999"
-        maxLength={3}
         id="quantity"
+        placeholder="1"
         value={quantity}
         onChange={handleChange}
         className="glass-box-input px-4 py-2 w-16 text-center"

@@ -6,18 +6,21 @@ import InfoIcon from '../Icons/InfoIcon';
 interface Props {
   placeholder?: string;
   options: GPU[];
+  index: number;
+  selectedGPU: string;
+  updateSelectedGPU: (index: number, gpu: string) => void;
 }
 
 const Dropdown: FC<Props> = props => {
-  // 1. Dropdown input box
-  // 2. Dropdown menu options
-  // 3. Open/close menu icon
-  // 4. Handle selecting menu option
+  // 1. Dropdown input box ✅
+  // 2. Dropdown menu options ✅
+  // 3. Open/close menu icon ✅
+  // 4. Handle selecting menu option ✅
   // 5. Searchable Dropdown.tsx select
+  // 6. Clicking outside of input options closes menu
 
-  const { placeholder, options } = props;
+  const { placeholder, options, selectedGPU, updateSelectedGPU, index } = props;
   const [showMenu, setShowMenu] = useState(false);
-  const [selectedGPU, setSelectedGPU] = useState('');
 
   /*  Method for handling typing in input
       const handleChange = event => {
@@ -44,6 +47,7 @@ const Dropdown: FC<Props> = props => {
               id="gpu-model"
               placeholder={placeholder}
               value={selectedGPU}
+              onChange={() => {}}
               className="bg-transparent focus:outline-none text-lg w-[400px]"
             />
             <ArrowDownIcon></ArrowDownIcon>
@@ -56,7 +60,7 @@ const Dropdown: FC<Props> = props => {
                   key={option.model}
                   className="px-2 py-1.5 hover:bg-cyan/20 rounded-lg"
                   onClick={() => {
-                    setSelectedGPU(option.model);
+                    updateSelectedGPU(index, option.model);
                     setShowMenu(!showMenu);
                   }}>
                   {option.model}
