@@ -38,7 +38,7 @@ const Dropdown: FC<Props> = props => {
       </label>
 
       <div className="flex">
-        <div>
+        <div className="relative">
           <div
             className="flex items-center glass-box-input px-4 py-2"
             onClick={() => setShowMenu(!showMenu)}>
@@ -54,7 +54,7 @@ const Dropdown: FC<Props> = props => {
           </div>
 
           {showMenu && (
-            <div className="w-full glass-box-input mt-1 px-2 py-2 h-[198px] overflow-y-auto dropdown-scrollbar">
+            <div className="absolute top-[46px] left-0 z-10 w-full glass-box-dropdown-menu mt-1 px-2 py-2 h-[198px] overflow-y-auto dropdown-scrollbar">
               {options.map(option => (
                 <div
                   key={option.model}

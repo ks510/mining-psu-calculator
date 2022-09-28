@@ -75,6 +75,16 @@
     border-radius: 10px;
   }
 
+  .glass-box-dropdown-menu {
+    background: linear-gradient(95.95deg, rgba(73, 84, 90, 0.8) 19.42%, rgba(61, 87, 98, 0.7) 102.64%);
+    border: 0.5px solid #343434;
+    box-shadow: inset 0px 2px 2px rgba(162, 162, 162, 0.2);
+    backdrop-filter: blur(5px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 10px;
+  }
+
   .glass-box-blue-glow {
     background: radial-gradient(46.91% 50% at 50% 120%, #31B2E8 0%, rgba(49, 178, 232, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
     opacity: 0.3;
