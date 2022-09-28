@@ -15,18 +15,20 @@ const QuantityInput: FC<Props> = props => {
 
   return (
     <div className="flex flex-col">
-      <label
-        htmlFor="quantity"
-        className="text-primary-orange font-medium small-glow-orange pb-3">
-        Quantity
-      </label>
+      {index === 0 && (
+        <label
+          htmlFor="quantity"
+          className="text-primary-orange font-medium small-glow-orange">
+          Quantity
+        </label>
+      )}
       <input
         type="number"
         id="quantity"
         placeholder="1"
         value={quantity}
         onChange={handleChange}
-        className="glass-box-input px-4 py-2 w-16 text-center"
+        className="glass-box-input px-4 py-2 w-16 text-center mt-4"
       />
     </div>
   );

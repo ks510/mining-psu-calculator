@@ -17,8 +17,8 @@ const Home: NextPage<Props> = props => {
         <title>Mining Rig Power Calculator</title>
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
-      <main className="flex flex-col items-center justify-center h-full">
-        <h1 className="text-5xl leading-tight font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-light to-orange-dark title-glow-orange tracking-[-0.01em]">
+      <main className="flex flex-col items-center h-full">
+        <h1 className="text-5xl leading-tight font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-light to-orange-dark title-glow-orange tracking-[-0.01em] mt-14  ">
           Mining Rig Power Calculator
         </h1>
 

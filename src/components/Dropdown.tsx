@@ -31,13 +31,15 @@ const Dropdown: FC<Props> = props => {
 
   return (
     <div className="flex flex-col">
-      <label
-        htmlFor="gpu-model"
-        className="text-primary-orange font-medium small-glow-orange pb-3">
-        GPU Model
-      </label>
+      {index === 0 && (
+        <label
+          htmlFor="gpu-model"
+          className="text-primary-orange font-medium small-glow-orange">
+          GPU Model
+        </label>
+      )}
 
-      <div className="flex">
+      <div className="flex mt-4">
         <div className="relative">
           <div
             className="flex items-center glass-box-input px-4 py-2"
