@@ -1,4 +1,4 @@
-import { FC, useState, MouseEvent } from 'react';
+import { FC, useState, MouseEvent, useEffect } from 'react';
 import Dropdown from '@components/Dropdown';
 import { GPU } from '../types/GPU';
 import QuantityInput from '@components/QuantityInput';
@@ -7,13 +7,27 @@ import AddCircleIcon from '../Icons/AddCircleIcon';
 
 interface Props {
   gpuList: GPU[];
+  setTotalGPUPower: (power: number) => void;
 }
 
 const Calculator: FC<Props> = props => {
-  const { gpuList } = props;
+  const { gpuList, setTotalGPUPower } = props;
   const [GPUInputFields, setGPUInputFields] = useState([
     { gpu: '', quantity: 1 }
   ]);
+
+  useEffect(() => {
+    const totalGPUPower = GPUInputFields.map(gpuInput => {
+      const gpu = gpuList.find(({ model }) => model === gpuInput.gpu);
+      if (gpu) {
+        return gpu.tdp * gpuInput.quantity;
+      }
+      return 0;
+    }).reduce((total, value) => total + value, 0);
+
+    setTotalGPUPower(totalGPUPower);
+    console.log('Total GPU Power ' + totalGPUPower);
+  }, [GPUInputFields, gpuList, setTotalGPUPower]);
 
   const updateSelectedGPU = (index: number, gpu: string) => {
     let selectedGPUs = [...GPUInputFields];
