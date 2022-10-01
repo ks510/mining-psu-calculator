@@ -4,6 +4,7 @@ import Calculator from '@components/Calculator';
 import { gpus } from '../data';
 import { GPU } from '../types/GPU';
 import { useState } from 'react';
+import Footer from '@components/Footer';
 
 interface Props {
   gpus: GPU[];
@@ -14,7 +15,7 @@ const Home: NextPage<Props> = props => {
   const [totalGPUPower, setTotalGPUPower] = useState(0);
 
   return (
-    <div className="h-screen">
+    <div className="min-h-screen pb-28">
       <Head>
         <title>Mining Rig Power Calculator</title>
         <link rel="icon" href="/public/favicon.ico" />
@@ -64,6 +65,7 @@ const Home: NextPage<Props> = props => {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };
