@@ -15,6 +15,7 @@ const Calculator: FC<Props> = props => {
   const [GPUInputFields, setGPUInputFields] = useState([
     { gpu: '', quantity: 1 }
   ]);
+  const [activeGPUDropdown, setActiveGPUDropdown] = useState(0);
 
   useEffect(() => {
     const totalGPUPower = GPUInputFields.map(gpuInput => {

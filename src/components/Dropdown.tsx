@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState } from 'react';
+import { ChangeEvent, FC, useEffect, useRef, useState } from 'react';
 import ArrowDownIcon from '../Icons/ArrowDownIcon';
 import { GPU } from '../types/GPU';
 import InfoIcon from '../Icons/InfoIcon';
@@ -25,6 +25,7 @@ const Dropdown: FC<Props> = props => {
   const [showMenu, setShowMenu] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const [showAllOptions, setShowAllOptions] = useState(true);
+  const searchRef = useRef<HTMLInputElement>(null);
 
   const onSearch = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
@@ -50,6 +51,13 @@ const Dropdown: FC<Props> = props => {
     console.log('Selected GPU:' + selectedGPU);
   };
 
+  const onDropdownClick = () => {
+    if (!showMenu && searchRef.current) {
+      searchRef.current.focus();
+    }
+    setShowMenu(!showMenu);
+  };
+
   return (
     <div className="flex flex-col">
       {index === 0 && (
@@ -64,7 +72,7 @@ const Dropdown: FC<Props> = props => {
         <div className="relative">
           <div
             className="flex items-center glass-box-input px-4 py-2"
-            onClick={() => setShowMenu(!showMenu)}>
+            onClick={onDropdownClick}>
             <input
               type="text"
               id="gpu-model"
@@ -72,8 +80,9 @@ const Dropdown: FC<Props> = props => {
               value={searchValue}
               onChange={onSearch}
               className="bg-transparent focus:outline-none text-lg w-[400px]"
+              ref={searchRef}
             />
-            <ArrowDownIcon></ArrowDownIcon>
+            <ArrowDownIcon />
           </div>
 
           {showMenu && (
