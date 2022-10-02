@@ -53,7 +53,7 @@ const Home: NextPage<Props> = props => {
               Safety Rule 20%
             </h2>
             <p className="font-semibold text-5xl text-off-white leading-tight mt-3">
-              {totalGPUPower * 0.2} W
+              {Math.round(totalGPUPower * 0.2)} W
             </p>
           </div>
 
