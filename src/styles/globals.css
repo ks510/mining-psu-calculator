@@ -1,8 +1,46 @@
-@import url('https://rsms.me/inter/inter.css');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Inter-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/Inter-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/Inter-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/Inter-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/Inter-ExtraBold.woff2") format("woff2");
+}
 
 @layer components {
   .title-glow-orange {
@@ -27,6 +65,26 @@
     border-radius: 30px;
   }
 
+  .glass-box-input {
+    background: linear-gradient(95.95deg, rgba(73, 84, 90, 0.3) 19.42%, rgba(61, 87, 98, 0) 102.64%);
+    border: 0.5px solid #343434;
+    box-shadow: inset 0px 2px 2px rgba(162, 162, 162, 0.2);
+    backdrop-filter: blur(5px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 10px;
+  }
+
+  .glass-box-dropdown-menu {
+    background: linear-gradient(95.95deg, #1E2328 19.42%, rgba(21, 22, 24, 0.8) 102.64%);
+    border: 0.5px solid #343434;
+    box-shadow: inset 0px 2px 2px rgba(162, 162, 162, 0.2);
+    backdrop-filter: blur(5px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 10px;
+  }
+
   .glass-box-blue-glow {
     background: radial-gradient(46.91% 50% at 50% 120%, #31B2E8 0%, rgba(49, 178, 232, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
     opacity: 0.3;
@@ -37,6 +95,36 @@
     background: radial-gradient(50% 50% at 50% -20%, rgba(238, 174, 46, 0.4) 0%, rgba(238, 174, 46, 0) 100%);
     opacity: 0.3;
     filter: blur(20px);
+  }
+
+  .dropdown-scrollbar::-webkit-scrollbar {
+    background-color: transparent;
+    width: 4px;
+  }
+
+  .dropdown-scrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  .dropdown-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 16px;
+    border: 4px solid transparent;
+  }
+
+  .dropdown-scrollbar::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
   }
 
 }
@@ -59,4 +147,23 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+  background-color: #171517;
+  width: 16px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #171517;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #373C48;
+  border-radius: 16px;
+  border: 4px solid #171517;
+}
+
+body::-webkit-scrollbar-button {
+  display: none;
 }
