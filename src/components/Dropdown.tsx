@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { ChangeEvent, FC, useState } from 'react';
 import ArrowDownIcon from '../Icons/ArrowDownIcon';
 import { GPU } from '../types/GPU';
 import InfoIcon from '../Icons/InfoIcon';
@@ -16,18 +16,39 @@ const Dropdown: FC<Props> = props => {
   // 2. Dropdown menu options ✅
   // 3. Open/close menu icon ✅
   // 4. Handle selecting menu option ✅
-  // 5. Searchable Dropdown.tsx select
+  // 5. Searchable Dropdown.tsx select ✅
   // 6. Clicking outside of input options closes menu
+  // 7. Key up and down navigates through dropdown options
+  // 8. Autofocus on current select option when opening dropdown options
 
   const { placeholder, options, selectedGPU, updateSelectedGPU, index } = props;
   const [showMenu, setShowMenu] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
+  const [showAllOptions, setShowAllOptions] = useState(true);
 
-  /*  Method for handling typing in input
-      const handleChange = event => {
-      setSelectedGPU(event.target.value);
+  const onSearch = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
+    setShowAllOptions(false);
+  };
 
-      console.log('value is:', event.target.value);
-    };*/
+  const getOptions = () => {
+    if (!searchValue || showAllOptions) {
+      return options;
+    }
+
+    return options.filter(option => {
+      return option.model.toLowerCase().indexOf(searchValue.toLowerCase()) >= 0;
+    });
+  };
+
+  const onSelectGPU = (index: number, GPUModel: string) => {
+    updateSelectedGPU(index, GPUModel);
+    setSearchValue(GPUModel);
+    setShowMenu(!showMenu);
+    setShowAllOptions(true);
+    console.log('Search value: ' + searchValue);
+    console.log('Selected GPU:' + selectedGPU);
+  };
 
   return (
     <div className="flex flex-col">
@@ -48,8 +69,8 @@ const Dropdown: FC<Props> = props => {
               type="text"
               id="gpu-model"
               placeholder={placeholder}
-              value={selectedGPU}
-              onChange={() => {}}
+              value={searchValue}
+              onChange={onSearch}
               className="bg-transparent focus:outline-none text-lg w-[400px]"
             />
             <ArrowDownIcon></ArrowDownIcon>
@@ -57,14 +78,11 @@ const Dropdown: FC<Props> = props => {
 
           {showMenu && (
             <div className="absolute top-[46px] left-0 z-10 w-full glass-box-dropdown-menu mt-1 px-2 py-2 h-[198px] overflow-y-auto dropdown-scrollbar">
-              {options.map(option => (
+              {getOptions().map(option => (
                 <div
                   key={option.model}
                   className="px-2 py-1.5 hover:bg-cyan/20 rounded-lg"
-                  onClick={() => {
-                    updateSelectedGPU(index, option.model);
-                    setShowMenu(!showMenu);
-                  }}>
+                  onClick={() => onSelectGPU(index, option.model)}>
                   {option.model}
                 </div>
               ))}
@@ -79,5 +97,4 @@ const Dropdown: FC<Props> = props => {
     </div>
   );
 };
-
 export default Dropdown;

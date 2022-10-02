@@ -26,7 +26,6 @@ const Calculator: FC<Props> = props => {
     }).reduce((total, value) => total + value, 0);
 
     setTotalGPUPower(totalGPUPower);
-    console.log('Total GPU Power ' + totalGPUPower);
   }, [GPUInputFields, gpuList, setTotalGPUPower]);
 
   const updateSelectedGPU = (index: number, gpu: string) => {
