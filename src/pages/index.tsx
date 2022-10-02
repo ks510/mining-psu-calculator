@@ -47,20 +47,22 @@ const Home: NextPage<Props> = props => {
               {totalGPUPower} W
             </p>
           </div>
-          <div className="flex flex-col items-center">
-            <h2 className="font-semibold text-2xl text-primary-orange small-glow-orange">
-              Other Components
-            </h2>
-            <p className="font-semibold text-5xl text-off-white leading-tight mt-3">
-              150 W
-            </p>
-          </div>
+
           <div className="flex flex-col items-center">
             <h2 className="font-semibold text-2xl text-primary-orange small-glow-orange">
               Safety Rule 20%
             </h2>
             <p className="font-semibold text-5xl text-off-white leading-tight mt-3">
               {totalGPUPower * 0.2} W
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <h2 className="font-semibold text-2xl text-primary-orange small-glow-orange">
+              Other Components
+            </h2>
+            <p className="font-semibold text-5xl text-off-white leading-tight mt-3">
+              150 W
             </p>
           </div>
         </div>
