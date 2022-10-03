@@ -9,8 +9,8 @@ const AddCircleIcon: FC<Props> = props => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="26"
-      height="20"
+      width={size * 1.290909090909091}
+      height={size}
       fill="none"
       viewBox="0 0 71 55">
       <g clipPath="url(#clip0)">
