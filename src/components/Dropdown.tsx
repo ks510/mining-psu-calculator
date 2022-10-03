@@ -26,6 +26,24 @@ const Dropdown: FC<Props> = props => {
   const [searchValue, setSearchValue] = useState('');
   const [showAllOptions, setShowAllOptions] = useState(true);
   const searchRef = useRef<HTMLInputElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const checkIfClickedOutside = (e: Event) => {
+      if (
+        showMenu &&
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
+        setShowMenu(!showMenu);
+      }
+    };
+    document.addEventListener('click', checkIfClickedOutside, true);
+
+    return () => {
+      document.removeEventListener('click', checkIfClickedOutside, true);
+    };
+  }, [showMenu]);
 
   const onSearch = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
@@ -45,10 +63,8 @@ const Dropdown: FC<Props> = props => {
   const onSelectGPU = (index: number, GPUModel: string) => {
     updateSelectedGPU(index, GPUModel);
     setSearchValue(GPUModel);
-    setShowMenu(!showMenu);
+    setShowMenu(false);
     setShowAllOptions(true);
-    console.log('Search value: ' + searchValue);
-    console.log('Selected GPU:' + selectedGPU);
   };
 
   const onDropdownClick = () => {
@@ -69,7 +85,7 @@ const Dropdown: FC<Props> = props => {
       )}
 
       <div className="flex mt-4">
-        <div className="relative">
+        <div className="relative" ref={dropdownRef}>
           <div
             className="flex items-center glass-box-input px-4 py-2"
             onClick={onDropdownClick}>
