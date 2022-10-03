@@ -84,40 +84,34 @@ const Dropdown: FC<Props> = props => {
         </label>
       )}
 
-      <div className="flex mt-4">
-        <div className="relative" ref={dropdownRef}>
-          <div
-            className="flex items-center glass-box-input px-4 py-2"
-            onClick={onDropdownClick}>
-            <input
-              type="text"
-              id="gpu-model"
-              placeholder={placeholder}
-              value={searchValue}
-              onChange={onSearch}
-              className="bg-transparent focus:outline-none text-lg w-[400px]"
-              ref={searchRef}
-            />
-            <ArrowDownIcon />
+      <div className="relative mt-4" ref={dropdownRef}>
+        <div
+          className="flex items-center glass-box-input px-4 py-2"
+          onClick={onDropdownClick}>
+          <input
+            type="text"
+            id="gpu-model"
+            placeholder={placeholder}
+            value={searchValue}
+            onChange={onSearch}
+            className="bg-transparent focus:outline-none text-lg w-[400px]"
+            ref={searchRef}
+          />
+          <ArrowDownIcon />
+        </div>
+
+        {showMenu && (
+          <div className="absolute top-[46px] left-0 z-10 w-full glass-box-dropdown-menu mt-1 px-2 py-2 h-[198px] overflow-y-auto dropdown-scrollbar">
+            {getOptions().map(option => (
+              <div
+                key={option.model}
+                className="px-2 py-1.5 hover:bg-cyan/20 rounded-lg"
+                onClick={() => onSelectGPU(index, option.model)}>
+                {option.model}
+              </div>
+            ))}
           </div>
-
-          {showMenu && (
-            <div className="absolute top-[46px] left-0 z-10 w-full glass-box-dropdown-menu mt-1 px-2 py-2 h-[198px] overflow-y-auto dropdown-scrollbar">
-              {getOptions().map(option => (
-                <div
-                  key={option.model}
-                  className="px-2 py-1.5 hover:bg-cyan/20 rounded-lg"
-                  onClick={() => onSelectGPU(index, option.model)}>
-                  {option.model}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-
-        <div className="h-[45px] w-[45px] grid place-items-center">
-          <InfoIcon size={24} />
-        </div>
+        )}
       </div>
     </div>
   );

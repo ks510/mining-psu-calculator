@@ -55,6 +55,15 @@ const Calculator: FC<Props> = props => {
     // consider adding check to prevent deleting the last input field
   };
 
+  const singleGPUInputSubtotal = (GPUIndex: number) => {
+    const gpu = gpuList.find(({ model }) => {
+      return GPUInputFields[GPUIndex].gpu === model;
+    });
+    const quantity = GPUInputFields[GPUIndex].quantity;
+
+    return gpu ? gpu.tdp * quantity : 0;
+  };
+
   return (
     <form className="relative px-10 py-10">
       <h1 className="text-2xl font-semibold text-primary-orange small-glow-orange mb-4">
@@ -71,18 +80,23 @@ const Calculator: FC<Props> = props => {
               selectedGPU={GPUInputFields[index]['gpu']}
               updateSelectedGPU={updateSelectedGPU}
             />
+
             <QuantityInput
               index={index}
               quantity={GPUInputFields[index]['quantity']}
               updateQuantity={updateGPUQuantity}
             />
+
             <button
-              className="w-[45px] h-[45px] grid place-items-center self-end"
+              className="w-[45px] h-[45px] grid place-items-center self-end hover:scale-110 transition-all scale-100"
               onClick={e => {
                 removeGPUField(index, e);
               }}>
               <TrashIcon size={24} />
             </button>
+            <p className="self-end text-gray-400 h-[45px] flex items-center text-sm">
+              {singleGPUInputSubtotal(index)} W
+            </p>
           </div>
         );
       })}
