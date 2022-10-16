@@ -14,7 +14,7 @@
       "@layouts/*": [
         "src/layouts/*.tsx"
       ],
-      "@types/*": [
+      "@customTypes/*": [
         "src/types/*.ts"
       ],
       "@pages/*": [
