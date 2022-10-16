@@ -1,13 +1,13 @@
-import { GPU } from './types/GPU';
+import { GPU } from '@customTypes/GPU';
 
 export const gpus: GPU[] = [
   {
-    model: 'AMD Radeon VII',
-    tdp: 300
-  },
-  {
     model: 'AMD Radeon Pro VII',
     tdp: 250
+  },
+  {
+    model: 'AMD Radeon VII',
+    tdp: 300
   },
   {
     model: 'AMD RX 460',
@@ -26,16 +26,16 @@ export const gpus: GPU[] = [
     tdp: 50
   },
   {
-    model: 'AMD RX 560',
-    tdp: 75
-  },
-  {
     model: 'AMD RX 5500',
     tdp: 130
   },
   {
     model: 'AMD RX 5500 XT',
     tdp: 130
+  },
+  {
+    model: 'AMD RX 560',
+    tdp: 75
   },
   {
     model: 'AMD RX 5600',
@@ -82,8 +82,16 @@ export const gpus: GPU[] = [
     tdp: 160
   },
   {
+    model: 'AMD RX 6650 XT',
+    tdp: 176
+  },
+  {
     model: 'AMD RX 6700 XT',
     tdp: 230
+  },
+  {
+    model: 'AMD RX 6750 XT',
+    tdp: 250
   },
   {
     model: 'AMD RX 6800',
@@ -96,6 +104,10 @@ export const gpus: GPU[] = [
   {
     model: 'AMD RX 6900 XT',
     tdp: 300
+  },
+  {
+    model: 'AMD RX 6950 XT',
+    tdp: 335
   },
   {
     model: 'AMD RX Vega 56',
@@ -234,79 +246,83 @@ export const gpus: GPU[] = [
     tdp: 200
   },
   {
-    model: 'Nvidia RTX 3070',
+    model: 'NVIDIA RTX 3070',
     tdp: 220
   },
   {
-    model: 'Nvidia RTX 3070 Ti',
+    model: 'NVIDIA RTX 3070 Ti',
     tdp: 290
   },
   {
-    model: 'Nvidia RTX 3080',
+    model: 'NVIDIA RTX 3080',
     tdp: 320
   },
   {
-    model: 'Nvidia RTX 3080 Ti',
+    model: 'NVIDIA RTX 3080 Ti',
     tdp: 350
   },
   {
-    model: 'Nvidia RTX 3090',
+    model: 'NVIDIA RTX 3090',
     tdp: 350
   },
   {
-    model: 'Nvidia RTX 3090 Ti',
+    model: 'NVIDIA RTX 3090 Ti',
     tdp: 450
   },
   {
-    model: 'Nvidia RTX A2000',
+    model: 'NVIDIA RTX 4090',
+    tdp: 450
+  },
+  {
+    model: 'NVIDIA RTX A2000',
     tdp: 70
   },
   {
-    model: 'Nvidia RTX A30',
+    model: 'NVIDIA RTX A30',
     tdp: 165
   },
   {
-    model: 'Nvidia RTX A4000',
+    model: 'NVIDIA RTX A4000',
     tdp: 140
   },
   {
-    model: 'Nvidia RTX A5000',
+    model: 'NVIDIA RTX A5000',
     tdp: 230
   },
   {
-    model: 'Nvidia RTX A6000',
+    model: 'NVIDIA RTX A6000',
     tdp: 300
   },
   {
-    model: 'Nvidia Tesla A100 PCIE',
+    model: 'NVIDIA Tesla A100 PCIE',
     tdp: 250
   },
   {
-    model: 'Nvidia Tesla P40',
+    model: 'NVIDIA Tesla P100 PCIE',
     tdp: 250
   },
   {
-    model: 'Nvidia Tesla T4',
+    model: 'NVIDIA Tesla P40',
+    tdp: 250
+  },
+  {
+    model: 'NVIDIA Tesla T4',
     tdp: 70
   },
   {
-    model: 'Nvidia Tesla P100 PCIE',
-    tdp: 250
-  },
-  {
-    model: 'Nvidia Titan RTX',
+    model: 'NVIDIA Titan RTX',
     tdp: 280
   },
   {
-    model: 'Nvidia Titan V',
+    model: 'NVIDIA Titan V',
     tdp: 250
   },
   {
-    model: 'Nvidia Titan X',
+    model: 'NVIDIA Titan X',
     tdp: 250
   },
   {
-    model: 'Nvidia Titan XP',
+    model: 'NVIDIA Titan XP',
     tdp: 250
   }
 ];
